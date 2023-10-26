@@ -1,39 +1,23 @@
-import java.util.Scanner;
 public class MyProgram 
 {
     public static void main(String[] args)
-    {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Press \"Enter\"" + " to generate a password.");
-        String userInput = input.nextLine();
-        
-        final String upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXY";
-        final String lowerCase = "abcdefghijklmnopqrstuvwxyz";
-        final String numbers = "0123456789";
-        final String symbols = "!@#$%&~?_";
+    { 
+        String upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String lowerCase = "abcdefghijklmnopqrstuvwxyz";
+        String numbers = "0123456789";
+        String symbols = "!@#$%&*_+=?";
         String password = "";
-    
-        password += getRandomChar(upperCase);
-        password += getRandomChar(lowerCase);
-        password += getRandomChar(numbers);
-        password += getRandomChar(symbols);
 
-        final String characterSet = upperCase + lowerCase + numbers + symbols;
-        for (int i = 8; i < 12; i++) {
-            password += getRandomChar(characterSet);
-            }
-            
-            System.out.println("Password: " + password);
-        }   
-        
-        private static char getRandomChar (String characterSet) {
-            int index = (int) (Math.random() * characterSet.length());
-            return characterSet.charAt(index);
+        for (int i = 0; i < 2; i ++) {
+        int randUpper = (int) Math.floor(Math.random() * upperCase.length());
+        int randLower = (int) Math.floor(Math.random() * lowerCase.length());
+        int randNum = (int) Math.floor(Math.random() * numbers.length());
+        int randSym = (int) Math.floor(Math.random() * symbols.length());
+        password += lowerCase.substring(randLower, randLower + 1);
+        password += upperCase.substring(randUpper, randUpper + 1);
+        password += numbers.substring(randNum, randNum + 1);
+        password += symbols.substring(randSym, randSym + 1);
         }
+        System.out.println(password);
+    }   
 }
-
-//A good password is one that contains letters, numbers, 
-//symbols and upper and lowercase characters.
-
-//Create a method that generates a random password 
-//of a certain length that includes at least one of each type.
