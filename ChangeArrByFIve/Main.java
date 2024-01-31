@@ -2,20 +2,23 @@ public class Main
 {
     public static void main(String[] args)
     {
-        double[] array = {5.3, -1.2, 1.2, -8.7, 9.9, 5.3, 8.8};
-        
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] > 0) {
-                array[i] *= 5;
+        double[] arrayQuintuple = {5.3, -1.2, 1.2, -8.7, 9.9, 5.3, 8.8};
+        changebyFive(arrayQuintuple);
+    }
+
+    public static void changebyFive(double[] arrayQuintuple) {
+        for (int i = 0; i < arrayQuintuple.length; i++) {
+            if (arrayQuintuple[i] > 0) {
+                arrayQuintuple[i] *= 5;
             }
             else {
-                array[i] = 0;
+                arrayQuintuple[i] = 0;
             }
-            if (i == array.length - 1) {
-                System.out.print("and " + array[i]);
+            if (i == arrayQuintuple.length - 1) {
+                System.out.print("and " + arrayQuintuple[i]);
             }
             else {
-                System.out.print(array[i] + ", ");
+                System.out.print(arrayQuintuple[i] + ", ");
             }
         }
     }
