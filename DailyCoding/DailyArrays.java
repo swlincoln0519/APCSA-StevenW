@@ -21,6 +21,21 @@ public class DailyArrays {
         for (int num : combinedArray) {
             System.out.print(num + " ");
         }
+
+        //ChangeArrByFive
+        double[] arrayQuintuple = {5.3, -1.2, 1.2, -8.7, 9.9, 5.3, 8.8};
+        changebyFive(arrayQuintuple);
+
+        //CloneArray
+        int[] sequence = {1, 2, 3};
+        int[] newArr = cloneArray(sequence, 3);
+        
+        for (int i = 0; i < newArr.length; i++) {
+            System.out.print(newArr[i]);
+            if (i != newArr.length - 1) {
+                System.out.print(", ");
+            }
+        }
     }
 
     public static int[] arrayAscend(int num){
@@ -51,5 +66,30 @@ public class DailyArrays {
         System.arraycopy(arr1, 0, concatArray, 0, arr1.length);
         System.arraycopy(arr2, 0, concatArray, arr1.length, arr2.length);
         return concatArray;
+    }
+
+    public static void changebyFive(double[] arrayQuintuple) {
+        for (int i = 0; i < arrayQuintuple.length; i++) {
+            if (arrayQuintuple[i] > 0) {
+                arrayQuintuple[i] *= 5;
+            }
+            else {
+                arrayQuintuple[i] = 0;
+            }
+            if (i == arrayQuintuple.length - 1) {
+                System.out.print("and " + arrayQuintuple[i]);
+            }
+            else {
+                System.out.print(arrayQuintuple[i] + ", ");
+            }
+        }
+    }
+
+    public static int[] cloneArray(int[] sequence, int n) {
+        int[] newArr = new int[sequence.length * n];
+        for (int i = 0; i < newArr.length; i++) {
+            newArr[i] = sequence[i % sequence.length];
+        }
+        return newArr;
     }
 }
