@@ -6,6 +6,8 @@ Projects in the repo include:
 1. Countdown
 1. Binary Converter
 1. Magic Eight Ball
+1. Shopping Cart
+1. Hangman 
 
 You can list the major projects (don't need to list minor ones)
 
