@@ -1,21 +1,28 @@
 public class Question {
-    private int totalQuestions = 0;
-    private String mcA = "";
-    private String mcB = "";
-    private String mcC = "";
-    private String mcD = "";
+    private String questionText;
+    private String mcA;
+    private String mcB;
+    private String mcC;
+    private String mcD;
     private char answer;
+    private int pointValue;
 
-    public void showQuestion() {
-        
+    public Question(String questionText, String mcA, String mcB, String mcC, String mcD, char answer, int pointValue) {
+        this.questionText = questionText;
+        this.mcA = mcA;
+        this.mcB = mcB;
+        this.mcC = mcC;
+        this.mcD = mcD;
+        this.answer = answer;
+        this.pointValue = pointValue;
     }
 
-    public int getTotalQuestions() {
-        return this.totalQuestions;
+    public String getQuestionText() {
+        return this.questionText;
     }
 
-    public void setTotalQuestions(int totalQuestions) {
-        this.totalQuestions = totalQuestions;
+    public void setQuestionText(String questionText) {
+        this.questionText = questionText;
     }
 
     public String getMcA() {
@@ -56,5 +63,26 @@ public class Question {
 
     public void setAnswer(char answer) {
         this.answer = answer;
+    }
+
+    public int getPointValue() {
+        return this.pointValue;
+    }
+
+    public void setPointValue(int pointValue) {
+        this.pointValue = pointValue;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+            " questionText='" + getQuestionText() + "'" +
+            ", mcA='" + getMcA() + "'" +
+            ", mcB='" + getMcB() + "'" +
+            ", mcC='" + getMcC() + "'" +
+            ", mcD='" + getMcD() + "'" +
+            ", answer='" + getAnswer() + "'" +
+            ", pointValue='" + getPointValue() + "'" +
+            "}";
     }
 }
