@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-publi class InputHelper {
+public class InputHelper {
     static Scanner userInput = new Scanner(System.in);
 
     public static char getChar(String message) {
@@ -8,4 +8,4 @@ publi class InputHelper {
         String answer = userInput.nextLine().toUpperCase();
         return answer.charAt(0);
     }
-}8
+}

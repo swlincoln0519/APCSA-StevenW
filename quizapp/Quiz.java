@@ -19,9 +19,9 @@ public class Quiz {
         System.out.println("Welcome to WaxOnWaxOff!");
         int count = 0;
         int score = 0;
+        displayQuestions();
         while (count < this.getTotalPoints()) {
-            questions.get(count).showQuestion();
-            char answer = InputHelper.getChar(message = "Type letter for your answer.");
+            char answer = InputHelper.getChar("Type letter for your answer.");
             if (answer == questions.get(count).getAnswer()) {
                 score++;
             }
@@ -48,7 +48,6 @@ public class Quiz {
             totalPoints += questions.get(i).getPointValue();
         }
         this.totalPoints = totalPoints;
-        return this.totalPoints = totalPoints;
         return this.totalPoints;
     }
 
