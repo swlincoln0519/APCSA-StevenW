@@ -48,7 +48,7 @@ public class Quiz {
             totalPoints += questions.get(i).getPointValue();
         }
         this.totalPoints = totalPoints;
-        return this.totalPoints;
+        return this.totalPoints = totalPoints;
     }
 
     public void setTotalPoints(int totalPoints) {
